@@ -10,4 +10,4 @@ JOIN
 WHERE
     e.department_id = 1 -- змінити на ID кафедри середнє навантаження асистентів якої необхідно отримати
 AND
-    e.position_id IN (4, 5);
+    e.position_name IN ('Асистент', 'Асистент к.н.');
