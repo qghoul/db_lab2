@@ -2,7 +2,7 @@
 
 
 SELECT 
-    e.employee_id, 
+    -- e.employee_id, 
     pd.full_name,
     -- e.department_id,    -- може бути корисним для перевірки відповідності департаменту
     p.position_name, 
@@ -17,4 +17,6 @@ JOIN
     Workbook w ON e.employee_id = w.employee_id
 WHERE 
     e.department_id = 1; -- змінити на ID кафедри перелік співробітників якої необхідно отримати
+AND 
+    p.position_name IN ('Профессор', 'Доцент', 'Старший викладач', 'Асистент к.н.', 'Асистент');
 
