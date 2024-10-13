@@ -11,6 +11,7 @@ SET ROLE testuser;
 
 CREATE TYPE order_type_enum AS ENUM ('Зарахування', 'Звільнення', 'Переведення', 'Зміна посади');
 CREATE TYPE academic_degree_enum AS ENUM ('Доктор філософії', 'Доктор наук');
+CREATE TYPE position_enum AS ENUM ('Профессор', 'Доцент', 'Старший викладач', 'Асистент к.н.', 'Асистент');
 
 CREATE TABLE StateAward (
     stateAward_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -22,7 +23,7 @@ CREATE TABLE AcademicDegree (
 );
 CREATE TABLE Position (
     position_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    position_name TEXT NOT NULL
+    position_name position_enum NOT NULL
 );
 CREATE TABLE Subject (
     subject_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
